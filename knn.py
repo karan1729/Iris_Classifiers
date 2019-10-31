@@ -92,7 +92,7 @@ def knn(training_set, test_set, k):
 def main():
     try:
         # get value of k
-        k = int(input('Enter the value of k : '))
+        k = int(input('Enter the value of k please : '))
 
         # load the training and test data set
         training_file = input('Enter name of training data file : ')
