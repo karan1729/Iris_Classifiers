@@ -114,6 +114,28 @@ def main():
 
     except ValueError as v:
         print(v)
+        
+        def convert_to_float(data_set, mode):
+    new_set = []
+    try:
+        if mode == 'training':
+            for data in data_set:
+                new_set.append([float(x) for x in data[:len(data)-1]] + [data[len(data)-1]])
+
+        elif mode == 'test':
+            for data in data_set:
+                new_set.append([float(x) for x in data])
+
+        else:
+            print('Invalid mode, program will exit.')
+            exit()
+
+        return new_set
+
+    except ValueError as v:
+        print(v)
+        print('Invalid data set format, program will exit.')
+        exit()
 
     except FileNotFoundError:
         print('File not found')
